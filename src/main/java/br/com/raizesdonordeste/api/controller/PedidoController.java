@@ -2,8 +2,8 @@ package br.com.raizesdonordeste.api.controller;
 
 import br.com.raizesdonordeste.api.dto.PedidoRequest;
 import br.com.raizesdonordeste.api.dto.PedidoResponse;
+import br.com.raizesdonordeste.api.model.CanalPedido;
 import br.com.raizesdonordeste.api.model.StatusPedido;
-import br.com.raizesdonordeste.api.model.Usuario;
 import br.com.raizesdonordeste.api.security.UsuarioDetails;
 import br.com.raizesdonordeste.api.service.PedidoService;
 import jakarta.validation.Valid;
@@ -39,34 +39,49 @@ public class PedidoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<PedidoResponse> buscarPorId(
-        @PathVariable Long id
+        @PathVariable Long id,
+        @AuthenticationPrincipal UsuarioDetails usuario
     ) {
-        return ResponseEntity.ok(pedidoService.buscarPorId(id));
+        return ResponseEntity.ok(pedidoService.buscarPorId(id, usuario.getId()));
     }
 
     @GetMapping
-    public ResponseEntity<List<PedidoResponse>> listarTodos() {
+    public ResponseEntity<List<PedidoResponse>> listarTodos(
+            @RequestParam(required = false) CanalPedido canal,
+            @AuthenticationPrincipal UsuarioDetails usuario
+    ) {
+        if (canal != null) {
+            return ResponseEntity.ok(
+                    pedidoService.listarPorCanal(canal, usuario.getId())
+            );
+        }
         return ResponseEntity.ok(
-                pedidoService.listarTodos()
+                pedidoService.listarTodos(usuario.getId())
         );
     }
 
     @PatchMapping("/{id}/status")
     public ResponseEntity<PedidoResponse> atualizarStatus(
             @PathVariable Long id,
-            @RequestParam StatusPedido status
+            @RequestParam StatusPedido status,
+            @AuthenticationPrincipal UsuarioDetails usuarioDetails
     ) {
         return ResponseEntity.ok(
-                pedidoService.atualizarStatus(id, status)
+                pedidoService.atualizarStatus(
+                        id,
+                        status,
+                        usuarioDetails.getId()
+                )
         );
     }
 
     @PatchMapping("/{id}/cancelar")
     public ResponseEntity<PedidoResponse> cancelarPedido(
-            @PathVariable Long id
+            @PathVariable Long id,
+            @AuthenticationPrincipal UsuarioDetails usuarioDetails
     ) {
         return ResponseEntity.ok(
-                pedidoService.cancelarPedido(id)
+                pedidoService.cancelarPedido(id, usuarioDetails.getId())
         );
     }
 

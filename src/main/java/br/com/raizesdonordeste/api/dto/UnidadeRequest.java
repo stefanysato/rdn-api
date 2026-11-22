@@ -1,6 +1,8 @@
 package br.com.raizesdonordeste.api.dto;
 
+import br.com.raizesdonordeste.api.model.TipoUnidade;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
@@ -38,6 +40,9 @@ public record UnidadeRequest(
 
         @NotBlank(message = "O nome é obrigatório")
         @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres")
-        String cep
+        String cep,
+
+        @NotNull(message = "O tipo da unidade é obrigatório")
+        TipoUnidade tipo
 
 ) {}

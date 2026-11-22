@@ -127,10 +127,37 @@ public class SecurityConfig {
                             .authenticated()
 
                         // PEDIDOS
+                        .requestMatchers(HttpMethod.PATCH, "/pedidos/*/status")
+                            .hasAnyRole("ATENDENTE", "COZINHA", "GERENTE", "ADMINISTRADOR")
+
                         .requestMatchers("/pedidos/**")
                             .authenticated()
 
-                        .requestMatchers("/fidelidade/**").authenticated()
+                        // FIDELIDADE
+
+                        .requestMatchers(
+                                HttpMethod.GET,
+                                "/fidelidade/minha-conta",
+                                "/fidelidade/minha-conta/movimentacoes"
+                        ).hasRole("CLIENTE")
+
+                        .requestMatchers(
+                                HttpMethod.POST,
+                                "/fidelidade/minha-conta/resgates"
+                        ).hasRole("CLIENTE")
+
+                        .requestMatchers("/fidelidade/**").denyAll()
+
+                        // AUDITORIA
+                        .requestMatchers("/auditoria/**")
+                            .hasRole("ADMINISTRADOR")
+
+                        // SWAGGER
+                        .requestMatchers(
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html"
+                        ).permitAll()
 
                         .anyRequest().authenticated()
                 )

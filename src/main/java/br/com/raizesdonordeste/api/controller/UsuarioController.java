@@ -6,6 +6,9 @@ import br.com.raizesdonordeste.api.dto.UsuarioRequest;
 import br.com.raizesdonordeste.api.dto.UsuarioResponse;
 import br.com.raizesdonordeste.api.security.UsuarioDetails;
 import br.com.raizesdonordeste.api.service.UsuarioService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +17,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(
+        name = "Usuários",
+        description = "Operações relacionadas ao cadastro e gerenciamento de usuários do sistema."
+)
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
@@ -24,6 +31,11 @@ public class UsuarioController {
         this.service = service;
     }
 
+    @Operation(
+            summary = "Cadastrar usuário",
+            description = "Cadastra novo usuário no sistema.",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
     @PostMapping
     public ResponseEntity<UsuarioResponse> cadastrar(
             @Valid @RequestBody UsuarioRequest request) {

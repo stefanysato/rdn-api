@@ -1,0 +1,11 @@
+package br.com.raizesdonordeste.api.model;
+
+public enum AcaoAuditoria {
+    CRIACAO_PEDIDO,
+    CANCELAMENTO_PEDIDO,
+    ALTERACAO_STATUS_PAGAMENTO,
+    CRIACAO_USUARIO,
+    DESATIVACAO_USUARIO,
+    ATIVACAO_USUARIO,
+    ALTERACAO_STATUS_PEDIDO
+}

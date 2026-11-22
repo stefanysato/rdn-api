@@ -36,6 +36,10 @@ public class Unidade {
     @Column(nullable = false, length = 9)
     private String cep;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoUnidade tipo;
+
     @Column(nullable = false)
     private boolean ativa = true;
 
@@ -45,7 +49,7 @@ public class Unidade {
     // construtor exigido pelo JPA
     protected Unidade() {}
 
-    public Unidade(String nome, String telefone, String logradouro, String numero, String bairro, String cidade, String estado, String cep) {
+    public Unidade(String nome, String telefone, String logradouro, String numero, String bairro, String cidade, String estado, String cep, TipoUnidade tipo) {
         this.nome = nome;
         this.telefone = telefone;
         this.logradouro = logradouro;
@@ -54,6 +58,7 @@ public class Unidade {
         this.cidade = cidade;
         this.estado = estado;
         this.cep = cep;
+        this.tipo = tipo;
     }
 
     public void ativar() {
@@ -72,7 +77,8 @@ public class Unidade {
             String bairro,
             String cidade,
             String estado,
-            String cep
+            String cep,
+            TipoUnidade tipo
     ) {
         this.nome = nome;
         this.telefone = telefone;
@@ -82,6 +88,7 @@ public class Unidade {
         this.cidade = cidade;
         this.estado = estado;
         this.cep = cep;
+        this.tipo = tipo;
     }
 
     public Long getId() {
@@ -126,5 +133,9 @@ public class Unidade {
 
     public LocalDateTime getCriadaEm() {
         return criadaEm;
+    }
+
+    public TipoUnidade getTipo() {
+        return tipo;
     }
 }

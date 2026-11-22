@@ -32,7 +32,8 @@ public class UnidadeService {
                 request.bairro().trim(),
                 request.cidade().trim(),
                 request.estado().trim().toUpperCase(Locale.ROOT),
-                request.cep().trim()
+                request.cep().trim(),
+                request.tipo()
         );
 
         Unidade unidadeSalva = repository.save(unidade);
@@ -78,7 +79,8 @@ public class UnidadeService {
                 request.bairro().trim(),
                 request.cidade().trim(),
                 request.estado().trim().toUpperCase(Locale.ROOT),
-                request.cep().trim()
+                request.cep().trim(),
+                request.tipo()
         );
         return converterParaResponse(unidade);
     }
@@ -102,6 +104,7 @@ public class UnidadeService {
                 unidade.getCidade(),
                 unidade.getEstado(),
                 unidade.getCep(),
+                unidade.getTipo(),
                 unidade.isAtiva(),
                 unidade.getCriadaEm()
         );
