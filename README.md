@@ -171,6 +171,11 @@ O Raízes do Nordeste API foi desenvolvido com foco no aprendizado e na aplicaç
 
 O projeto também considera aspectos relacionados à proteção de dados pessoais, incluindo princípios da Lei Geral de Proteção de Dados (LGPD), especialmente no contexto do programa de fidelidade.
 
+## Links
+
+- Repositório: https://github.com/stefanysato/rdn-api
+- Coleção de testes (postman): `postman/RdnAPI.postman_collection.json`
+
 ---
 
-**Projeto acadêmico — Desenvolvimento de uma API REST para gerenciamento de uma rede de restaurantes.**
+**Projeto acadêmico - UNINTER (2026) **

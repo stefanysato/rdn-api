@@ -88,7 +88,7 @@ public class GlobalExceptionHandler {
     ) {
         return ResponseEntity
                 .status(HttpStatus.UNAUTHORIZED)
-                .body(Map.of("erro", "E-mail ou senha inválidos"));
+                .body(Map.of("erro", "E-mail ou senha incorretos"));
     }
 
 }
