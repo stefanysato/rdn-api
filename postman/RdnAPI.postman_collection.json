@@ -1,157 +1,530 @@
 {
   "info": {
+    "_collection_link": "https://go.postman.co/collection/55280293-169c04cf-399d-4c00-86df-a22f8f19b76d?source=collection_link",
+    "_exporter_id": "55280293",
     "_postman_id": "169c04cf-399d-4c00-86df-a22f8f19b76d",
     "name": "RdnAPI",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "55280293",
-    "_collection_link": "https://go.postman.co/collection/55280293-169c04cf-399d-4c00-86df-a22f8f19b76d?source=collection_link"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "auth",
       "item": [
         {
           "name": "login",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "// CLIENTE\n{\n    \"email\": \"ste@gmail.com\",\n    \"senha\": \"MinhaSenha123\"\n}\n\n// // ADMIN\n// {\n//     \"email\": \"admin@raizesdonordeste.com.br\",\n//     \"senha\": \"raizes01\"\n// }",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "// CLIENTE\n{\n    \"email\": \"ste@gmail.com\",\n    \"senha\": \"MinhaSenha123\"\n}\n\n// // ADMIN\n// {\n//     \"email\": \"admin@raizesdonordeste.com.br\",\n//     \"senha\": \"raizes01\"\n// }"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/auth/login",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "auth",
                 "login"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/auth/login"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"token\": \"{{json_web_token_0u5y}}\",\n  \"tipo\": \"Bearer\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:08:17 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "login - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "// CLIENTE\n// {\n//     \"email\": \"ste@gmail.com\",\n//     \"senha\": \"MinhaSenha123\"\n// }\n\n// ADMIN\n{\n    \"email\": \"admin@raizesdonordeste.com.br\",\n    \"senha\": \"raizes01\"\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/auth/login"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"erro\": \"E-mail ou senha incorretos\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:11:53 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "login - erro",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "// CLIENTE\n{\n    \"email\": \"ste@gmail.com\",\n    \"senha\": \"MinhaSenha12\"\n}\n\n// ADMIN\n// {\n//     \"email\": \"admin@raizesdonordeste.com.br\",\n//     \"senha\": \"raizes01\"\n// }"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/auth/login"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"token\": \"{{json_web_token_14j6}}\",\n  \"tipo\": \"Bearer\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:53:52 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "login - gerente - ok",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "// CLIENTE\n// {\n//     \"email\": \"ste@gmail.com\",\n//     \"senha\": \"MinhaSenha123\"\n// }\n\n// ADMIN\n// {\n//     \"email\": \"admin@raizesdonordeste.com.br\",\n//     \"senha\": \"raizes01\"\n// }\n\n// GERENTE\n{\n    \"email\": \"francisca@raizesdonordeste.com.br\",\n    \"senha\": \"fran@rdn\"\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/auth/login"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         }
-      ]
+      ],
+      "name": "auth"
     },
     {
-      "name": "usuarios",
       "item": [
         {
-          "name": "fidelidade",
           "item": [
             {
               "name": "minha conta",
               "request": {
                 "auth": {
-                  "type": "bearer",
                   "bearer": [
                     {
                       "key": "token",
-                      "value": "{{json_web_token_11np}}",
-                      "type": "string"
+                      "type": "string",
+                      "value": "{{json_web_token_11np}}"
                     }
-                  ]
+                  ],
+                  "type": "bearer"
                 },
-                "method": "GET",
                 "header": [],
+                "method": "GET",
                 "url": {
-                  "raw": "localhost:8080/fidelidade/minha-conta",
                   "host": [
                     "localhost"
                   ],
-                  "port": "8080",
                   "path": [
                     "fidelidade",
                     "minha-conta"
-                  ]
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/fidelidade/minha-conta"
                 }
               },
-              "response": []
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n  \"saldoPontos\": 61,\n  \"id\": 2,\n  \"criadoEm\": \"2026-11-22T20:34:08.243575\"\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "65"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Mon, 23 Nov 2026 16:12:38 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "name": "minha conta - sucesso",
+                  "originalRequest": {
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "localhost"
+                      ],
+                      "path": [
+                        "fidelidade",
+                        "minha-conta"
+                      ],
+                      "port": "8080",
+                      "raw": "localhost:8080/fidelidade/minha-conta"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
             },
             {
               "name": "listar movimentações",
               "request": {
                 "auth": {
-                  "type": "bearer",
                   "bearer": [
                     {
                       "key": "token",
-                      "value": "{{json_web_token_11np}}",
-                      "type": "string"
+                      "type": "string",
+                      "value": "{{json_web_token_11np}}"
                     }
-                  ]
+                  ],
+                  "type": "bearer"
                 },
-                "method": "GET",
                 "header": [],
+                "method": "GET",
                 "url": {
-                  "raw": "localhost:8080/fidelidade/minha-conta/movimentacoes",
                   "host": [
                     "localhost"
                   ],
-                  "port": "8080",
                   "path": [
                     "fidelidade",
                     "minha-conta",
                     "movimentacoes"
-                  ]
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/fidelidade/minha-conta/movimentacoes"
                 }
               },
-              "response": []
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "[\n  {\n    \"tipo\": \"CREDITO\",\n    \"pedidoId\": 2,\n    \"pontos\": 45,\n    \"criadoEm\": \"2026-11-23T10:20:08.471989\",\n    \"id\": 1\n  },\n  {\n    \"tipo\": \"RESGATE\",\n    \"pontos\": 20,\n    \"criadoEm\": \"2026-11-23T10:40:02.133334\",\n    \"id\": 2\n  },\n  {\n    \"tipo\": \"CREDITO\",\n    \"pedidoId\": 4,\n    \"pontos\": 36,\n    \"criadoEm\": \"2026-11-23T11:25:46.647282\",\n    \"id\": 3\n  }\n]",
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "x-content-type-options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "x-xss-protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, no-store, max-age=0, must-revalidate"
+                    },
+                    {
+                      "key": "pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "expires",
+                      "value": "0"
+                    },
+                    {
+                      "key": "x-frame-options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "261"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Mon, 23 Nov 2026 16:13:04 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "name": "listar movimentações",
+                  "originalRequest": {
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "localhost"
+                      ],
+                      "path": [
+                        "fidelidade",
+                        "minha-conta",
+                        "movimentacoes"
+                      ],
+                      "port": "8080",
+                      "raw": "localhost:8080/fidelidade/minha-conta/movimentacoes"
+                    }
+                  }
+                }
+              ]
             },
             {
               "name": "resgatar pontos",
               "request": {
                 "auth": {
-                  "type": "bearer",
                   "bearer": [
                     {
                       "key": "token",
-                      "value": "",
-                      "type": "string"
+                      "type": "string",
+                      "value": ""
                     }
-                  ]
+                  ],
+                  "type": "bearer"
                 },
-                "method": "POST",
                 "header": [],
+                "method": "POST",
                 "url": {
-                  "raw": "localhost:8080/fidelidade/minha-conta/resgates?pontos=100",
                   "host": [
                     "localhost"
                   ],
-                  "port": "8080",
                   "path": [
                     "fidelidade",
                     "minha-conta",
                     "resgates"
                   ],
+                  "port": "8080",
                   "query": [
                     {
                       "key": "pontos",
                       "value": "100"
                     }
-                  ]
+                  ],
+                  "raw": "localhost:8080/fidelidade/minha-conta/resgates?pontos=100"
                 }
               },
               "response": []
             }
-          ]
+          ],
+          "name": "fidelidade"
         },
         {
           "name": "cadastrar",
@@ -159,160 +532,682 @@
             "auth": {
               "type": "noauth"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"nome\": \"Teste\",\n    \"email\": \"teste@email.com\",\n    \"senha\": \"MinhaSenha123\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"nome\": \"Teste\",\n    \"email\": \"teste@email.com\",\n    \"senha\": \"MinhaSenha123\"\n}"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/usuarios",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 9,\n  \"nome\": \"Cliente\",\n  \"email\": \"cliente@teste.com.br\",\n  \"ativo\": true,\n  \"criadoEm\": \"2026-11-23T13:14:10.494905745\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:14:10 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "cadastrar - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\": \"Cliente\",\n    \"email\": \"cliente@teste.com.br\",\n    \"senha\": \"teste1234\"\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"status\": 400,\n  \"erro\": \"Bad Request\",\n  \"mensagem\": \"Existem campos inválidos\",\n  \"detalhes\": [\n    \"senha: A senha é obrigatória\"\n  ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:13:21 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "close"
+                }
+              ],
+              "name": "cadastrar - erro",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\": \"Teste\",\n    \"email\": \"teste@email.com\"\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "cadastrar funcionários",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{admin}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0u5y}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"nome\": \"Teste\",\n    \"email\": \"teste@raizesdonordeste.com.br\",\n    \"senha\": \"12345678\",\n    \"role\": \"GERENTE\",\n    \"unidadeId\": 1\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"nome\": \"Teste\",\n    \"email\": \"teste@raizesdonordeste.com.br\",\n    \"senha\": \"12345678\",\n    \"role\": \"GERENTE\",\n    \"unidadeId\": 1\n}"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/usuarios/funcionarios",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios",
                 "funcionarios"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios/funcionarios"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"status\": 409,\n  \"erro\": \"Conflict\",\n  \"mensagem\": \"Este e-mail já está cadastrado.\",\n  \"detalhes\": null\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:10:17 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "cadastrar funcionários - erro 409",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\": \"Teste\",\n    \"email\": \"teste@raizesdonordeste.com.br\",\n    \"senha\": \"12345678\",\n    \"role\": \"GERENTE\",\n    \"unidadeId\": 1\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "funcionarios"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios/funcionarios"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "listar usuários",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0u5y}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": ""
             },
+            "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/usuarios",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Admin\",\n    \"email\": \"admin@raizesdonordeste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T20:21:38.144268\"\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"João\",\n    \"email\": \"joao-at01@raizesdonordeste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T20:28:05.78591\"\n  },\n  {\n    \"id\": 3,\n    \"nome\": \"Luci\",\n    \"email\": \"luci@raizesdonordeste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T20:32:50.52755\"\n  },\n  {\n    \"id\": 4,\n    \"nome\": \"Nina\",\n    \"email\": \"nina-at01@raizesdonordeste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T20:33:08.232783\"\n  },\n  {\n    \"id\": 5,\n    \"nome\": \"Stefany\",\n    \"email\": \"ste@gmail.com\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T20:34:08.239203\"\n  },\n  {\n    \"id\": 6,\n    \"nome\": \"Francisca\",\n    \"email\": \"francisca@raizesdonordeste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T22:15:27.491744\"\n  },\n  {\n    \"id\": 7,\n    \"nome\": \"Teste\",\n    \"email\": \"teste@email.com\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-23T11:18:24.037317\"\n  },\n  {\n    \"id\": 8,\n    \"nome\": \"Teste\",\n    \"email\": \"teste@raizesdonordeste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-23T13:10:10.064583\"\n  },\n  {\n    \"id\": 9,\n    \"nome\": \"Cliente\",\n    \"email\": \"cliente@teste.com.br\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-23T13:14:10.494906\"\n  }\n]",
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:15:47 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "listar usuários",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios"
+                }
+              }
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"erro\": \"Você não tem permissão para acessar este recurso\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json;charset=ISO-8859-1"
+                },
+                {
+                  "key": "content-length",
+                  "value": "60"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:17:05 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "listar usuários - erro 403",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "buscar por id",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0u5y}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/usuarios/3",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios",
-                "3"
-              ]
+                "9"
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios/9"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"status\": 404,\n  \"erro\": \"Not Found\",\n  \"mensagem\": \"Usuário não encontrado\",\n  \"detalhes\": null\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:09:22 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "buscar por id - erro",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "9"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios/9"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 5,\n  \"nome\": \"Stefany\",\n  \"email\": \"ste@gmail.com\",\n  \"ativo\": true,\n  \"criadoEm\": \"2026-11-22T20:34:08.239203\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:17:37 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "buscar por id - sucesso",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "5"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios/5"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "ativar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/usuarios/3/ativar",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios",
                 "3",
                 "ativar"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios/3/ativar"
             }
           },
           "response": []
@@ -321,186 +1216,542 @@
           "name": "desativar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/usuarios/9/desativar",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios",
                 "9",
                 "desativar"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios/9/desativar"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"erro\": \"Autenticação necessária\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json;charset=ISO-8859-1"
+                },
+                {
+                  "key": "content-length",
+                  "value": "35"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:18:00 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "desativar - erro",
+              "originalRequest": {
+                "header": [],
+                "method": "PATCH",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "9",
+                    "desativar"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios/9/desativar"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "perfil",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_11np}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_11np}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/usuarios/perfil",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "usuarios",
                 "perfil"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/usuarios/perfil"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 5,\n  \"nome\": \"Stefany\",\n  \"email\": \"ste@gmail.com\",\n  \"ativo\": true,\n  \"criadoEm\": \"2026-11-22T20:34:08.239203\"\n}",
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:18:22 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "perfil",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "perfil"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/usuarios/perfil"
+                }
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "name": "usuarios"
     },
     {
-      "name": "unidades",
       "item": [
         {
           "name": "cadastrar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0oq2}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0oq2}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"nome\": \"Unidade Salvador\",\n    \"telefone\": \"(71)12348765\",\n    \"logradouro\": \"Av Sete de Setembro\",\n    \"numero\": \"1259\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"Salvador\",\n    \"estado\": \"BA\",\n    \"cep\": \"40301-110\",\n    \"tipo\": \"FILIAL\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"nome\": \"Unidade Salvador\",\n    \"telefone\": \"(71)12348765\",\n    \"logradouro\": \"Av Sete de Setembro\",\n    \"numero\": \"1259\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"Salvador\",\n    \"estado\": \"BA\",\n    \"cep\": \"40301-110\",\n    \"tipo\": \"FILIAL\"\n}"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/unidades",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 5,\n  \"nome\": \"Unidade Teste\",\n  \"telefone\": \"(11)12348765\",\n  \"logradouro\": \"R Teste\",\n  \"numero\": \"1234\",\n  \"bairro\": \"Centro\",\n  \"cidade\": \"São Paulo\",\n  \"estado\": \"SP\",\n  \"cep\": \"40301-110\",\n  \"tipo\": \"FRANQUIA\",\n  \"ativa\": true,\n  \"criadaEm\": \"2026-11-23T13:19:53.503020742\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:19:53 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "cadastrar unidade - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\": \"Unidade Teste\",\n    \"telefone\": \"(11)12348765\",\n    \"logradouro\": \"R Teste\",\n    \"numero\": \"1234\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"40301-110\",\n    \"tipo\": \"FRANQUIA\"\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "unidades"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/unidades"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "listar unidades",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{admin}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{admin}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/unidades",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Unidade Recife - Matriz\",\n    \"telefone\": \"(81)12345678\",\n    \"logradouro\": \"Av Marquês de Olinda\",\n    \"numero\": \"123\",\n    \"bairro\": \"Recife Antigo\",\n    \"cidade\": \"Recife\",\n    \"estado\": \"PE\",\n    \"cep\": \"50030-230\",\n    \"tipo\": \"MATRIZ\",\n    \"ativa\": true,\n    \"criadaEm\": \"2026-11-22T20:25:54.473913\"\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"Unidade Maceió\",\n    \"telefone\": \"(82)43218765\",\n    \"logradouro\": \"Rua do Comércio\",\n    \"numero\": \"92\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"Maceió\",\n    \"estado\": \"AL\",\n    \"cep\": \"57020-030\",\n    \"tipo\": \"FILIAL\",\n    \"ativa\": true,\n    \"criadaEm\": \"2026-11-22T20:28:39.172464\"\n  },\n  {\n    \"id\": 3,\n    \"nome\": \"Unidade Salvador\",\n    \"telefone\": \"(71)12348765\",\n    \"logradouro\": \"Av Sete de Setembro\",\n    \"numero\": \"1259\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"Salvador\",\n    \"estado\": \"BA\",\n    \"cep\": \"40301-110\",\n    \"tipo\": \"FILIAL\",\n    \"ativa\": true,\n    \"criadaEm\": \"2026-11-23T11:21:45.549279\"\n  },\n  {\n    \"id\": 4,\n    \"nome\": \"Unidade Salvador\",\n    \"telefone\": \"(71)12348765\",\n    \"logradouro\": \"Av Sete de Setembro\",\n    \"numero\": \"1259\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"Salvador\",\n    \"estado\": \"BA\",\n    \"cep\": \"40301-110\",\n    \"tipo\": \"FILIAL\",\n    \"ativa\": true,\n    \"criadaEm\": \"2026-11-23T11:21:52.188784\"\n  },\n  {\n    \"id\": 5,\n    \"nome\": \"Unidade Teste\",\n    \"telefone\": \"(11)12348765\",\n    \"logradouro\": \"R Teste\",\n    \"numero\": \"1234\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"40301-110\",\n    \"tipo\": \"FRANQUIA\",\n    \"ativa\": true,\n    \"criadaEm\": \"2026-11-23T13:19:53.503021\"\n  }\n]",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:20:20 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "listar unidades - sucesso",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "unidades"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/unidades"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "buscar por id",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/unidades/2",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades",
                 "2"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades/2"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"status\": 404,\n  \"erro\": \"Not Found\",\n  \"mensagem\": \"Unidade não encontrada\",\n  \"detalhes\": null\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:20:47 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "buscar por id - erro 404",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "unidades",
+                    "7"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/unidades/7"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "ativar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/unidades/2/ativar",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades",
                 "2",
                 "ativar"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades/2/ativar"
             }
           },
           "response": []
@@ -508,156 +1759,511 @@
         {
           "name": "desativar",
           "request": {
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/unidades/1/desativar",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades",
                 "1",
                 "desativar"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades/1/desativar"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"erro\": \"Autenticação necessária\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json;charset=ISO-8859-1"
+                },
+                {
+                  "key": "content-length",
+                  "value": "35"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:21:32 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "desativar - erro",
+              "originalRequest": {
+                "header": [],
+                "method": "PATCH",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "unidades",
+                    "4",
+                    "desativar"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/unidades/4/desativar"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "text",
+              "body": "",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:21:50 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "desativar - sucesso",
+              "originalRequest": {
+                "header": [],
+                "method": "PATCH",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "unidades",
+                    "4",
+                    "desativar"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/unidades/4/desativar"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "atualizar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PUT",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"nome\": \"Unidade Praia Grande\",\n    \"telefone\": \"(13) 9999-8888\",\n    \"logradouro\": \"Av. Presidente Kennedy\",\n    \"numero\": \"12000\",\n    \"bairro\": \"Vila Caiçara\",\n    \"cidade\": \"Praia Grande\",\n    \"estado\": \"SP\",\n    \"cep\": \"11705010\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"nome\": \"Unidade Praia Grande\",\n    \"telefone\": \"(13) 9999-8888\",\n    \"logradouro\": \"Av. Presidente Kennedy\",\n    \"numero\": \"12000\",\n    \"bairro\": \"Vila Caiçara\",\n    \"cidade\": \"Praia Grande\",\n    \"estado\": \"SP\",\n    \"cep\": \"11705010\"\n}"
             },
+            "header": [],
+            "method": "PUT",
             "url": {
-              "raw": "localhost:8080/unidades/2",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades",
                 "2"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades/2"
             }
           },
           "response": []
         }
-      ]
+      ],
+      "name": "unidades"
     },
     {
-      "name": "produtos",
       "item": [
         {
           "name": "cadastrar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0oq2}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0oq2}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"nome\": \"Café coado com rapadura\",\n    \"descricao\" : \"Bebida tradicional brasileira que substitui o açúcar refinado pelo doce de caldo de cana, resultando em um sabor encorpado e levemente caramelizado.\",\n    \"categoria\" : \"BEBIDA\"\n    }",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"nome\": \"Café coado com rapadura\",\n    \"descricao\" : \"Bebida tradicional brasileira que substitui o açúcar refinado pelo doce de caldo de cana, resultando em um sabor encorpado e levemente caramelizado.\",\n    \"categoria\" : \"BEBIDA\"\n    }"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/produtos",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "produtos"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/produtos"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 7,\n  \"nome\": \"Baião de dois\",\n  \"descricao\": \"Preparado de arroz e feijão, de preferência o feijão verde ou feijão novo. É frequente adicionar-se queijo coalho e nata.\",\n  \"categoria\": \"PRATO_PRINCIPAL\",\n  \"ativo\": true,\n  \"criadoEm\": \"2026-11-23T13:23:56.23329654\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:23:56 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "cadastrar produto - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\": \"Baião de dois\",\n    \"descricao\" : \"Preparado de arroz e feijão, de preferência o feijão verde ou feijão novo. É frequente adicionar-se queijo coalho e nata.\",\n    \"categoria\" : \"PRATO_PRINCIPAL\"\n    }"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "produtos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/produtos"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"erro\": \"Você não tem permissão para acessar este recurso\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json;charset=ISO-8859-1"
+                },
+                {
+                  "key": "content-length",
+                  "value": "60"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:24:35 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "cadastrar - erro 403",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\": \"Baião de dois\",\n    \"descricao\" : \"Preparado de arroz e feijão, de preferência o feijão verde ou feijão novo. É frequente adicionar-se queijo coalho e nata.\",\n    \"categoria\" : \"PRATO_PRINCIPAL\"\n    }"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "produtos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/produtos"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "listar produtos",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0oq2}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0oq2}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/produtos",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "produtos"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/produtos"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Bolinho de carne de sol\",\n    \"descricao\": \"Petisco clássico da culinária nordestina, geralmente feito com massa de macaxeira ou batata e recheado com carne de sol e queijos como coalho, muçarela ou catupiry\",\n    \"categoria\": \"ENTRADA\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T21:59:46.231565\"\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"Moqueca de peixe\",\n    \"descricao\": \"Cozido de peixe ou frutos do mar preparado com leite de coco, azeite de dendê, coentro, pimentões, cebola e tomate, geralmente servido com arroz branco, pirão e farofa.\",\n    \"categoria\": \"PRATO_PRINCIPAL\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T22:00:10.170657\"\n  },\n  {\n    \"id\": 3,\n    \"nome\": \"Farofa de cuscuz\",\n    \"descricao\": \"Combinação do cuscuz de milho cozido no vapor e soltinho com refogados saborosos, como manteiga, cebola, calabresa, bacon ou queijo coalho.\",\n    \"categoria\": \"ACOMPANHAMENTO\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T22:00:16.275533\"\n  },\n  {\n    \"id\": 4,\n    \"nome\": \"Bolo de rolo\",\n    \"descricao\": \"Doce típico de Pernambuco. Camadas finíssimas de massa enroladas com goiabada derretida, formando uma espiral delicada.\",\n    \"categoria\": \"SOBREMESA\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T22:00:22.607771\"\n  },\n  {\n    \"id\": 5,\n    \"nome\": \"Café coado com rapadura\",\n    \"descricao\": \"Bebida tradicional brasileira que substitui o açúcar refinado pelo doce de caldo de cana, resultando em um sabor encorpado e levemente caramelizado.\",\n    \"categoria\": \"BEBIDA\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-22T22:00:27.923545\"\n  },\n  {\n    \"id\": 6,\n    \"nome\": \"Café coado com rapadura\",\n    \"descricao\": \"Bebida tradicional brasileira que substitui o açúcar refinado pelo doce de caldo de cana, resultando em um sabor encorpado e levemente caramelizado.\",\n    \"categoria\": \"BEBIDA\",\n    \"ativo\": false,\n    \"criadoEm\": \"2026-11-23T11:22:29.13891\"\n  },\n  {\n    \"id\": 7,\n    \"nome\": \"Baião de dois\",\n    \"descricao\": \"Preparado de arroz e feijão, de preferência o feijão verde ou feijão novo. É frequente adicionar-se queijo coalho e nata.\",\n    \"categoria\": \"PRATO_PRINCIPAL\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-11-23T13:23:56.233297\"\n  }\n]",
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:49:28 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "listar produtos",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "produtos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/produtos"
+                }
+              }
+            }
+          ]
         },
         {
           "name": "buscar por id",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{admin}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{admin}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/produtos/4",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "produtos",
                 "4"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/produtos/4"
             }
           },
           "response": []
@@ -666,28 +2272,28 @@
           "name": "ativar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/prodtos/2/ativar",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "prodtos",
                 "2",
                 "ativar"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/prodtos/2/ativar"
             }
           },
           "response": []
@@ -696,28 +2302,28 @@
           "name": "desativar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0oq2}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0oq2}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/produtos/6/desativar",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "produtos",
                 "6",
                 "desativar"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/produtos/6/desativar"
             }
           },
           "response": []
@@ -726,108 +2332,263 @@
           "name": "atualizar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PUT",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"nome\" : \"Baião de dois\",\n    \"descricao\" : \"Preparado de arroz e feijão com queijo coalho e nata.\",\n    \"categoria\" : \"PRATO_PRINCIPAL\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"nome\" : \"Baião de dois\",\n    \"descricao\" : \"Preparado de arroz e feijão com queijo coalho e nata.\",\n    \"categoria\" : \"PRATO_PRINCIPAL\"\n}"
             },
+            "header": [],
+            "method": "PUT",
             "url": {
-              "raw": "localhost:8080/produtos/2",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "produtos",
                 "2"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/produtos/2"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 6,\n  \"nome\": \"Cartola\",\n  \"descricao\": \"Sobremesa pernambucana feita com a combinação de banana frita, queijo coalho derretido, açúcar e canela.\",\n  \"categoria\": \"SOBREMESA\",\n  \"ativo\": false,\n  \"criadoEm\": \"2026-11-23T11:22:29.13891\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:51:43 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "atualizar produto - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"nome\" : \"Cartola\",\n    \"descricao\" : \"Sobremesa pernambucana feita com a combinação de banana frita, queijo coalho derretido, açúcar e canela.\",\n    \"categoria\" : \"SOBREMESA\"\n}"
+                },
+                "header": [],
+                "method": "PUT",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "produtos",
+                    "6"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/produtos/6"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         }
-      ]
+      ],
+      "name": "produtos"
     },
     {
-      "name": "estoque",
       "item": [
         {
           "name": "cadastrar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{gerente}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{gerente}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"produtoId\": 5,\n    \"unidadeId\": 1,\n    \"quantidade\": 30,\n    \"preco\": 6.50\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"produtoId\": 5,\n    \"unidadeId\": 1,\n    \"quantidade\": 30,\n    \"preco\": 6.50\n}"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/estoque",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "estoque"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/estoque"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 7,\n  \"produtoId\": 6,\n  \"produtoNome\": \"Cartola\",\n  \"categoria\": \"SOBREMESA\",\n  \"unidadeId\": 1,\n  \"unidadeNome\": \"Unidade Recife - Matriz\",\n  \"quantidade\": 25,\n  \"preco\": 18\n}",
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:55:37 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "cadastrar",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"produtoId\": 6,\n    \"unidadeId\": 1,\n    \"quantidade\": 25,\n    \"preco\": 18.00\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "estoque"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/estoque"
+                }
+              }
+            }
+          ]
         },
         {
           "name": "consultar",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{gerente}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{gerente}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/unidades/1/estoque",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "unidades",
                 "1",
                 "estoque"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/unidades/1/estoque"
             }
           },
           "response": []
@@ -835,125 +2596,358 @@
         {
           "name": "atualizar preço",
           "request": {
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/estoque/1/preco",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "estoque",
                 "1",
                 "preco"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/estoque/1/preco"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 7,\n  \"produtoId\": 6,\n  \"produtoNome\": \"Cartola\",\n  \"categoria\": \"SOBREMESA\",\n  \"unidadeId\": 1,\n  \"unidadeNome\": \"Unidade Recife - Matriz\",\n  \"quantidade\": 25,\n  \"preco\": 20\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 16:57:35 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "atualizar preço - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"preco\": 20.00\n}"
+                },
+                "header": [],
+                "method": "PATCH",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "estoque",
+                    "7",
+                    "preco"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/estoque/7/preco"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         }
-      ]
+      ],
+      "name": "estoque"
     },
     {
-      "name": "pedidos",
       "item": [
         {
           "name": "novo pedido",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0rc7}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0rc7}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
-            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"unidadeId\": 1,\n    \"canal\": \"WEB\",\n    \"itens\": [\n        {\n            \"produtoId\": 4,\n            \"quantidade\": 2\n        }\n    ]\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
-              }
+              },
+              "raw": "{\n    \"unidadeId\": 1,\n    \"canal\": \"WEB\",\n    \"itens\": [\n        {\n            \"produtoId\": 4,\n            \"quantidade\": 2\n        }\n    ]\n}"
             },
+            "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/pedidos",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "pedidos"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/pedidos"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 5,\n  \"unidadeId\": 1,\n  \"registradoPorId\": 5,\n  \"canal\": \"APP\",\n  \"status\": \"RECEBIDO\",\n  \"valorTotal\": 54,\n  \"criadoEm\": \"2026-11-23T14:03:02.689347509\",\n  \"itens\": [\n    {\n      \"produtoId\": 4,\n      \"quantidade\": 1,\n      \"precoUnitario\": 18,\n      \"subtotal\": 18\n    },\n    {\n      \"produtoId\": 5,\n      \"quantidade\": 2,\n      \"precoUnitario\": 8,\n      \"subtotal\": 16\n    },\n    {\n      \"produtoId\": 6,\n      \"quantidade\": 1,\n      \"precoUnitario\": 20,\n      \"subtotal\": 20\n    }\n  ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:03:02 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "novo pedido - sucesso",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \"unidadeId\": 1,\n    \"canal\": \"APP\",\n    \"itens\": [\n        {\n            \"produtoId\": 4,\n            \"quantidade\": 1\n        },\n        {\n            \"produtoId\": 5,\n            \"quantidade\": 2\n        },\n        {\n            \"produtoId\": 6,\n            \"quantidade\": 1\n        }\n    ]\n}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "pedidos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/pedidos"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "atualizar status",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_15wo}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_15wo}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "PATCH",
             "header": [],
+            "method": "PATCH",
             "url": {
-              "raw": "localhost:8080/pedidos/1/status?status=EM_PREPARACAO",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "pedidos",
                 "1",
                 "status"
               ],
+              "port": "8080",
               "query": [
                 {
                   "key": "status",
                   "value": "EM_PREPARACAO"
                 }
-              ]
+              ],
+              "raw": "localhost:8080/pedidos/1/status?status=EM_PREPARACAO"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"id\": 5,\n  \"unidadeId\": 1,\n  \"registradoPorId\": 5,\n  \"canal\": \"APP\",\n  \"status\": \"EM_PREPARACAO\",\n  \"valorTotal\": 54,\n  \"criadoEm\": \"2026-11-23T14:03:02.689348\",\n  \"itens\": [\n    {\n      \"produtoId\": 4,\n      \"quantidade\": 1,\n      \"precoUnitario\": 18,\n      \"subtotal\": 18\n    },\n    {\n      \"produtoId\": 5,\n      \"quantidade\": 2,\n      \"precoUnitario\": 8,\n      \"subtotal\": 16\n    },\n    {\n      \"produtoId\": 6,\n      \"quantidade\": 1,\n      \"precoUnitario\": 20,\n      \"subtotal\": 20\n    }\n  ]\n}",
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:04:46 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "atualizar status",
+              "originalRequest": {
+                "header": [],
+                "method": "PATCH",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "pedidos",
+                    "5",
+                    "status"
+                  ],
+                  "port": "8080",
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "EM_PREPARACAO"
+                    }
+                  ],
+                  "raw": "localhost:8080/pedidos/5/status?status=EM_PREPARACAO"
+                }
+              }
+            }
+          ]
         },
         {
           "name": "listar todos",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{gerente}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{gerente}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/pedidos",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "pedidos"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/pedidos"
             }
           },
           "response": []
@@ -962,135 +2956,490 @@
           "name": "listar por canal",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
-                  "type": "string"
+                  "type": "string",
+                  "value": ""
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/pedidos?canal=TOTEM",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "pedidos"
               ],
+              "port": "8080",
               "query": [
                 {
                   "key": "canal",
                   "value": "TOTEM"
                 }
-              ]
+              ],
+              "raw": "localhost:8080/pedidos?canal=TOTEM"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "[\n  {\n    \"id\": 1,\n    \"unidadeId\": 1,\n    \"registradoPorId\": 5,\n    \"canal\": \"APP\",\n    \"status\": \"EM_PREPARACAO\",\n    \"valorTotal\": 103.8,\n    \"criadoEm\": \"2026-11-23T09:45:30.201102\",\n    \"itens\": [\n      {\n        \"produtoId\": 1,\n        \"quantidade\": 2,\n        \"precoUnitario\": 9,\n        \"subtotal\": 18\n      },\n      {\n        \"produtoId\": 2,\n        \"quantidade\": 1,\n        \"precoUnitario\": 34.9,\n        \"subtotal\": 34.9\n      },\n      {\n        \"produtoId\": 3,\n        \"quantidade\": 1,\n        \"precoUnitario\": 19.9,\n        \"subtotal\": 19.9\n      },\n      {\n        \"produtoId\": 4,\n        \"quantidade\": 1,\n        \"precoUnitario\": 18,\n        \"subtotal\": 18\n      },\n      {\n        \"produtoId\": 5,\n        \"quantidade\": 2,\n        \"precoUnitario\": 6.5,\n        \"subtotal\": 13\n      }\n    ]\n  },\n  {\n    \"id\": 5,\n    \"unidadeId\": 1,\n    \"registradoPorId\": 5,\n    \"canal\": \"APP\",\n    \"status\": \"EM_PREPARACAO\",\n    \"valorTotal\": 54,\n    \"criadoEm\": \"2026-11-23T14:03:02.689348\",\n    \"itens\": [\n      {\n        \"produtoId\": 4,\n        \"quantidade\": 1,\n        \"precoUnitario\": 18,\n        \"subtotal\": 18\n      },\n      {\n        \"produtoId\": 5,\n        \"quantidade\": 2,\n        \"precoUnitario\": 8,\n        \"subtotal\": 16\n      },\n      {\n        \"produtoId\": 6,\n        \"quantidade\": 1,\n        \"precoUnitario\": 20,\n        \"subtotal\": 20\n      }\n    ]\n  }\n]",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:06:24 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "listar por canal - ok",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "pedidos"
+                  ],
+                  "port": "8080",
+                  "query": [
+                    {
+                      "key": "canal",
+                      "value": "APP"
+                    }
+                  ],
+                  "raw": "localhost:8080/pedidos?canal=APP"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         }
-      ]
+      ],
+      "name": "pedidos"
     },
     {
-      "name": "pagamentos",
       "item": [
         {
           "name": "pagar pedido",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0rc7}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0rc7}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "POST",
             "header": [],
+            "method": "POST",
             "url": {
-              "raw": "localhost:8080/pedidos/4/pagamentos",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "pedidos",
                 "4",
                 "pagamentos"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/pedidos/4/pagamentos"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"pedidoId\": 5,\n  \"criadoEm\": \"2026-11-23T14:03:44.694210653\",\n  \"status\": \"APROVADO\",\n  \"valor\": 54,\n  \"pagamentoId\": 3,\n  \"mensagem\": \"Pagamento aprovado.\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "140"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:03:44 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "pagar pedido - ok",
+              "originalRequest": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "pedidos",
+                    "5",
+                    "pagamentos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/pedidos/5/pagamentos"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         },
         {
           "name": "consultar pagamentos",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0rc7}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0rc7}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/pedidos/4/pagamentos",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "pedidos",
                 "4",
                 "pagamentos"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/pedidos/4/pagamentos"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"erro\": \"Autenticação necessária\"\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json;charset=ISO-8859-1"
+                },
+                {
+                  "key": "content-length",
+                  "value": "35"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:05:02 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "consultar pagamentos - erro 401",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "pedidos",
+                    "4",
+                    "pagamentos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/pedidos/4/pagamentos"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "json",
+              "body": "[\n  {\n    \"status\": \"APROVADO\",\n    \"pagamentoId\": 2,\n    \"criadoEm\": \"2026-11-23T11:25:46.632258\",\n    \"pedidoId\": 4,\n    \"valor\": 36\n  }\n]",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "106"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:05:38 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "consultar pagamentos - ok",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "pedidos",
+                    "4",
+                    "pagamentos"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/pedidos/4/pagamentos"
+                }
+              },
+              "status": "OK"
+            }
+          ]
         }
-      ]
+      ],
+      "name": "pagamentos"
     },
     {
-      "name": "auditoria",
       "item": [
         {
           "name": "logs",
           "request": {
             "auth": {
-              "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{json_web_token_0oq2}}",
-                  "type": "string"
+                  "type": "string",
+                  "value": "{{json_web_token_0oq2}}"
                 }
-              ]
+              ],
+              "type": "bearer"
             },
-            "method": "GET",
             "header": [],
+            "method": "GET",
             "url": {
-              "raw": "localhost:8080/auditoria",
               "host": [
                 "localhost"
               ],
-              "port": "8080",
               "path": [
                 "auditoria"
-              ]
+              ],
+              "port": "8080",
+              "raw": "localhost:8080/auditoria"
             }
           },
-          "response": []
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "[\n  {\n    \"id\": 1,\n    \"usuarioId\": 5,\n    \"usuarioNome\": \"Stefany\",\n    \"acao\": \"CRIACAO_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 1,\n    \"detalhes\": \"Pedido criado. Canal: APP\",\n    \"dataHora\": \"2026-11-23T09:45:30.320305\"\n  },\n  {\n    \"id\": 2,\n    \"usuarioId\": 5,\n    \"usuarioNome\": \"Stefany\",\n    \"acao\": \"CRIACAO_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 2,\n    \"detalhes\": \"Pedido criado. Canal: TOTEM\",\n    \"dataHora\": \"2026-11-23T09:56:05.227611\"\n  },\n  {\n    \"id\": 3,\n    \"usuarioId\": 5,\n    \"usuarioNome\": \"Stefany\",\n    \"acao\": \"CRIACAO_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 3,\n    \"detalhes\": \"Pedido criado. Canal: TOTEM\",\n    \"dataHora\": \"2026-11-23T09:56:19.291987\"\n  },\n  {\n    \"id\": 4,\n    \"usuarioId\": 6,\n    \"usuarioNome\": \"Francisca\",\n    \"acao\": \"ALTERACAO_STATUS_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 1,\n    \"detalhes\": \"Status alterado de RECEBIDO para EM_PREPARACAO\",\n    \"dataHora\": \"2026-11-23T10:05:50.431666\"\n  },\n  {\n    \"id\": 5,\n    \"usuarioId\": 5,\n    \"usuarioNome\": \"Stefany\",\n    \"acao\": \"CRIACAO_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 4,\n    \"detalhes\": \"Pedido criado. Canal: WEB\",\n    \"dataHora\": \"2026-11-23T11:25:18.829489\"\n  },\n  {\n    \"id\": 6,\n    \"usuarioId\": 5,\n    \"usuarioNome\": \"Stefany\",\n    \"acao\": \"CRIACAO_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 5,\n    \"detalhes\": \"Pedido criado. Canal: APP\",\n    \"dataHora\": \"2026-11-23T14:03:02.722334\"\n  },\n  {\n    \"id\": 7,\n    \"usuarioId\": 6,\n    \"usuarioNome\": \"Francisca\",\n    \"acao\": \"ALTERACAO_STATUS_PEDIDO\",\n    \"entidade\": \"PEDIDO\",\n    \"entidadeId\": 5,\n    \"detalhes\": \"Status alterado de RECEBIDO para EM_PREPARACAO\",\n    \"dataHora\": \"2026-11-23T14:04:46.822555\"\n  }\n]",
+              "cookie": [],
+              "header": [
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "x-xss-protection",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "expires",
+                  "value": "0"
+                },
+                {
+                  "key": "x-frame-options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1364"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 23 Nov 2026 17:06:02 GMT"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "name": "logs",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "localhost"
+                  ],
+                  "path": [
+                    "auditoria"
+                  ],
+                  "port": "8080",
+                  "raw": "localhost:8080/auditoria"
+                }
+              }
+            }
+          ]
         }
-      ]
+      ],
+      "name": "auditoria"
     }
   ],
   "variable": [
@@ -1104,6 +3453,10 @@
     },
     {
       "key": "json_web_token_0rc7",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0u5y",
       "secret": true
     }
   ]
