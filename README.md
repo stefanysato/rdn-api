@@ -178,4 +178,4 @@ O projeto também considera aspectos relacionados à proteção de dados pessoai
 
 ---
 
-**Projeto acadêmico - UNINTER (2026) **
+*Projeto acadêmico - UNINTER, Projeto Multidisciplinar - Trilha Back-End (2026)*
